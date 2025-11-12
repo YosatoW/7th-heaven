@@ -1,0 +1,53 @@
+extends ../layout.pug
+
+block content 
+  section.page-left
+    .container
+      .intro-block.text-center
+        h1 Stiftung | Klar & Hoffnungsvoll
+        p Unsere Vision ist eine Welt, in der Lebensenergie frei fliesst und jeder Mensch die Chance erhält, zu wachsen.
+        p Wir schaffen Orte, die Mut geben, Gemeinschaft stärken und ein Licht entzünden – selbst im Schatten von Midgar.
+      hr
+  // Woher wir kommen
+  section.stiftung
+    .container
+      .row
+        .col.image
+          img.image-click(src="/static/images/gallerie/location/location-outside_01.jpg" alt="Stifftung - Woher wir kommen")
+        .col.text
+          h2 Woher wir kommen
+          p Unsere Arbeit entspringt der Idee, dass jeder Mensch – egal aus welchem Sektor, egal aus welcher Lebenslage – eine echte Chance verdient, seine eigene Lebensenergie zu entfalten.
+          p Wie ein kleiner Funke tief unter Midgar begann unsere Geschichte mit der Vision, Arbeit als Quelle von Würde, Stabilität und neuer Kraft zu verstehen.
+          p Seit den ersten Tagen steht die Stiftung für Gemeinschaft, Mut und Menschlichkeit. Wir glauben daran, dass wahre Stärke nicht aus Wettbewerb entsteht, sondern aus Zusammenarbeit – wie ein schwaches Licht, das heller brennt, wenn viele es gemeinsam tragen.
+      hr
+  // Was wir tun
+  section.stiftung
+    .container
+      .row
+        .col.text.text-center
+          h2 Was wir tun
+          p Wir schaffen Orte, an denen Menschen mit unterschiedlichen Fähigkeiten zusammen wirken, lernen und wachsen können.
+          p Unsere Arbeit verbindet Professionalität mit sozialem Engagement – ein Zusammenspiel aus Können, Herz und Verantwortung.
+          p Wir fördern Integration nicht als Pflicht, sondern als Haltung: Jeder Arbeitsplatz, jede Ausbildung und jedes freundliche Wort trägt dazu bei, Lebensenergie in Balance zu halten.
+          p Denn wenn Menschen einander stärken, entsteht ein Kreislauf, der weit über den Alltag hinaus wirkt – wie Mako, das im Zentrum der Erde kreist.
+        .col.image
+          img.image-click(src="/static/icons/logo.png" alt="HalliGalli")
+      hr
+  // Geniessen und Gutes tun
+  section.stiftung
+    .container
+      .row
+        .col.image
+          img.image-click(src="/static/icons/logo.png" alt="HalliGalli")
+        .col.text
+          h2 Geniessen und Gutes tun
+          p Im 7th Heaven geht es um mehr als gutes Essen oder einen gelungenen Cocktail – es geht darum, ein Stück echte Gemeinschaft zu erleben.
+          p Mit jedem Besuch und jeder Veranstaltung unterstützt du unsere Arbeit und hilfst, Lebensenergie in Bewegung zu halten.
+          p Du trägst dazu bei, dass Menschen neue Perspektiven finden und hoffnungsvoll nach vorne schauen können.
+          p So wird Genuss zu etwas Grosserem: einem Zeichen für Solidarität, Wärme und Menschlichkeit.
+          p Denn manchmal reicht ein gemeinsames Mahl, um neue Hoffnung zu entfachen.
+
+  // Modal für Bildanzeige
+  #imageModal.modal
+    span.close ×
+    img.modal-content#modalImg

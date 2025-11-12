@@ -1,0 +1,49 @@
+{
+  "header": {
+    "topbar": [
+      { "id": "events", "title": "Events & Aktuelles", "href": "/events", "maintenance": true },
+      { "id": "stiftung", "title": "Stiftung", "href": "/stiftung", "maintenance": false },
+      { "id": "jobs", "title": "Freie Stellen", "href": "/jobs", "maintenance": false }
+    ],
+    "chapters": [
+      {
+        "id": "essen",
+        "title": "Drinks, Snacks & Feiern",
+        "subpages": [
+          { "id": "menu", "title": "Cocktails & Klassiker", "maintenance": false },
+          { "id": "specials", "title": "Drinks & Aktionen", "maintenance": true },
+          { "id": "feiern", "title": "Feiern im 7th Heaven", "maintenance": true }
+        ]
+      },
+      {
+        "id": "ueber-uns",
+        "title": "Über uns",
+        "subpages": [
+          { "id": "team", "title": "Team", "maintenance": false },
+          { "id": "geschichte", "title": "Unsere Geschichte", "maintenance": true },
+          { "id": "impressionen", "title": "Blicke ins 7th Heaven", "maintenance": false }
+        ]
+      },
+      {
+        "id": "kontakt",
+        "title": "Kontakt",
+        "subpages": [
+          { "id": "kontakte", "title": "So findest du uns", "maintenance": false },
+          { "id": "impressum", "title": "Impressum", "maintenance": false },
+          { "id": "datenschutz", "title": "Datenschutzerklärung", "maintenance": false }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      { "id": "impressum", "title": "Impressum", "href": "/impressum" },
+      { "id": "datenschutz", "title": "Datenschutzerklärung", "href": "/datenschutz" }
+    ],
+    "social": [
+      { "title": "Facebook", "href": "https://facebook.com", "icon": "/static/icons/facebook.png" },
+      { "title": "Instagram", "href": "https://instagram.com", "icon": "/static/icons/instagram.png" },
+      { "title": "LinkedIn", "href": "https://linkedin.com", "icon": "/static/icons/linkedin.png" }
+    ]
+  }
+}

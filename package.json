@@ -1,0 +1,30 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "pg": "^8.16.3",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/pg": "^8.15.6",
+    "drizzle-kit": "^0.31.6",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.6"
+  }
+}

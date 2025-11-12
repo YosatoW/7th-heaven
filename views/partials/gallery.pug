@@ -1,0 +1,6 @@
+mixin gallery(images)
+  .section.gallery
+    .gallery
+      each img in images
+        .gallery-item
+          img(src=img, alt="Galeriebild", class="image-click")

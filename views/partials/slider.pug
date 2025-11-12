@@ -1,0 +1,25 @@
+// Haupt-Slider
+mixin sliderBlock(slider)
+  if !slider
+    p(style="color:red") Fehler: Slider-Daten fehlen!
+  else if slider.type === 'thumbnail'
+    .splide(id=`${slider.id}-main`)
+      .splide__track
+        ul.splide__list
+          each img in slider.images
+            li.splide__slide
+              img(src=img, alt="Slide")
+
+    .splide(id=`${slider.id}-thumbs`)
+      .splide__track
+        ul.splide__list
+          each img in slider.images
+            li.splide__slide
+              img(src=img, alt="Thumbnail")
+  else
+    .splide(id=slider.id)
+      .splide__track
+        ul.splide__list
+          each img in slider.images
+            li.splide__slide
+              img(src=img, alt="Slide")

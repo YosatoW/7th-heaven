@@ -1,0 +1,48 @@
+//- footer.pug
+
+footer.site-footer
+  .footer-inner
+    // Spalte 1: Kontakt
+    .footer-column
+      ul.list-style-none
+        h3 Kontakt
+        li 7th Heaven
+        li Sector 7 Slums, Midgar
+        li neben der alte Bahnlinie
+        li 8005 Nibelheim
+        li Tel: +00 07 77 HEAVEN
+        li
+          a(href="mailto:info@7thheaven-midgar.jp") info@7thheaven-midgar.jp
+        p Öffnungszeiten:
+        ul.list-style-none
+          li Montag – Donnerstag: 17:00 – 01:00
+          li Freitag & Samstag: 17:00 – 03:00
+          li Sonntag: 18:00 – 00:00
+
+    // Spalte 2: Newsletter + dynamische Legal Links
+    .footer-column
+      h3 Informiert bleiben
+      p Erfahre zuerst, was sich im Untergrund von Midgar tut – neue Drinks, geheime Events und Specials im 7th Heaven.
+      form.newsletter(id="newsletterForm")
+        input(type="email" id="newsletterEmail" placeholder="Ihre E-Mail" required)
+        button(type="submit") →
+      .legal-links
+        ul.list-style-none
+          each link in site.footer.links
+            li: a(href=link.href)= link.title
+
+    // Spalte 3: Social Icons dynamisch
+    .footer-column
+      h3 Folgen & Empfehlen Sie uns
+      .social-icons
+        each social in site.footer.social
+          a(href=social.href target="_blank")
+            img(src=social.icon alt=social.title)
+
+// Newsletter Pop-up
+.popup(style="display:none")
+  .popup-content
+    span.close ×
+    h3 Vielen Dank für deine Anmeldung!
+    p Deine E-Mail wurde gespeichert.
+    button.button1 OK

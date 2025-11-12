@@ -1,0 +1,61 @@
+//- /views/page/kontakt/kontakte.pug
+
+extends ../../layout.pug
+
+block content
+  section.contact-section
+    .container
+      .intro-block.text-center
+        h1 Kontakt - 7th Heaven
+        p „Willst du mehr über uns und unsere geheimen Machenschaften erfahren?
+        p Schick uns eine Nachricht, und wir melden uns so schnell wie ein SOLDIER im Einsatz bei dir.“
+
+    form.contact(id="contactForm" method="POST" novalidate)
+      .form-grid
+        .form-group
+          label(for="firstname") Vorname *
+          input#firstname(type="text" name="firstname" required)
+
+        .form-group
+          label(for="lastname") Nachname *
+          input#lastname(type="text" name="lastname" required)
+
+        .form-group
+          label(for="email") E-Mail *
+          input#email(type="email" name="email" required)
+
+        .form-group
+          label(for="tel") Telefon *
+          input#tel(type="text" name="tel" required)
+
+        .form-group
+          label(for="address") Adresse
+          input#address(type="text" name="address")
+
+        .form-group
+          label(for="plz") PLZ
+          input#plz(type="text" name="plz")
+
+        .form-group
+          label(for="city") Ort
+          input#city(type="text" name="city")
+
+      .form-group.full-width
+        label(for="comments") Bemerkungen
+        textarea#comments(name="comments" rows="4")
+
+      .form-actions
+        .form-group.checkbox
+          input#privacy(type="checkbox" name="privacy" required)
+          label(for="privacy") Hiermit erkläre ich mich mit der 
+            a(href="/datenschutz" target="_blank") Datenschutzerklärung 
+            einverstanden *
+        button.button.button1(type="submit") Nachricht senden
+
+    // Pop-up bei Erfolg
+    #contactPopup.popup(style="display: none")
+      .popup-content
+        span.close ×
+        h3 Vielen Dank für deine Nachricht!
+        p Wir melden uns so schnell wie möglich.
+        button.button1 OK

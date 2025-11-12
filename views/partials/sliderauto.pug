@@ -1,0 +1,13 @@
+mixin slider(id)
+  - const slider = getSlider(id);
+
+  if !slider
+    p(style="color:red") Fehler: Slider #{id} existiert nicht!
+  else
+    // HTML erzeugen
+    +sliderBlock(slider)
+
+    // JS Auto-Registrierung
+    script.
+      window.sliders = window.sliders || [];
+      window.sliders.push(!{JSON.stringify(slider)});

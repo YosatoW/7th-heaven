@@ -1,0 +1,36 @@
+header.site-header
+  .header-inner
+    .logo
+      a(href="/")
+        img(src="/static/icons/logo.png", alt="7th Heaven")
+
+    // Burger-Button rechts & Mobile-Menü-Button
+    .menu-toggle ☰
+    nav.mobile-menu
+      ul
+        each item in site.header.topbar
+          li: a(href=item.href)= item.title
+        each chapter in site.header.chapters
+          li.menu-chapter
+            a(href="/" + (chapter.subpages && chapter.subpages.length ? chapter.subpages[0].id : chapter.id))= chapter.title
+            if chapter.subpages && chapter.subpages.length
+              ul.sub
+                each sub in chapter.subpages
+                  li: a(href="/" + sub.id)= sub.title
+
+    // Normale Desktop-Navigation
+    .nav-area
+      nav.topbar
+        ul.top-menu
+          each item in site.header.topbar
+            li: a(href=item.href)= item.title
+      nav.menubar
+        ul.main-menu
+          each chapter in site.header.chapters
+            li.menu-chapter
+              a(href="/" + (chapter.subpages && chapter.subpages.length ? chapter.subpages[0].id : chapter.id))= chapter.title
+              if chapter.subpages && chapter.subpages.length
+                ul.sub
+                  each sub in chapter.subpages
+                    if !sub.hidden
+                      li: a(href="/" + sub.id)= sub.title

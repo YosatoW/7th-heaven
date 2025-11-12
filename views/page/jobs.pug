@@ -1,0 +1,76 @@
+//- /views/page/jobs.pug
+
+extends ../layout.pug
+
+block content
+  section.page-left
+    .container
+      .intro-block.text-center
+        h1 Willkommen im 7th Heaven – Werde Teil unserer Crew!
+        p Suchst du nach einer Aufgabe, bei der Herz, Können und Teamgeist zählen?
+        p Willst du mithelfen, Menschen zusammenzubringen – mit gutem Essen, starker Energie und echtem Midgar-Spirit?
+        p Ob du Erfahrung aus der Küche, vom Tresen oder aus dem Handel mitbringst: bei uns zählt Leidenschaft mehr als Level.
+      hr
+      // Standort
+      .row
+        .col.text.text-center
+          h2 Standort
+          ul.list-style-none
+            li 7th Heaven Bar
+            li Sector 7 Slums, Midgar
+            li neben der alte Bahnlinie
+            li 8005 Nibelheim
+            li Tel: +00 07 77 HEAVEN
+            li Allgemeine Anfragen: 
+              a(href="mailto:info@7thheaven-midgar.jp") info@7thheaven-midgar.jp
+            li Bewerbungen & Training: 
+              a(href="mailto:hr@7thheaven-midgar.jp") hr@7thheaven-midgar.jp
+        .col.image
+          img.image-click(src="/static/images/gallerie/location/ubahn.png" alt="Kontakt - Standort")
+      hr
+      // Offene Positionen
+      .row
+        .col.image
+          img.image-click(src="/static/icons/logo.png" alt="Offene Positionen")
+        .col.text
+          h2 Offene Positionen
+          ul.list-style-none
+            li
+              strong Barkeeper:in / Mix-Magier:in 100%
+              | – Du verstehst dich auf Drinks, Charme und ein ruhiges Ohr für Gäste.
+            li
+              strong Küchenheld:in (Tournant / Sous Chef) 100%
+              | – Für unsere Tavernen im Sektor 7 und Edge.
+            li
+              strong Service-Mitarbeiter:in 80–100%
+              | – Du bringst Energie und Herz auf den Tisch – egal, ob im 7th Heaven oder unterwegs.
+            li
+              strong Aushilfe / Reservist:in 10–100%
+              | – Wirst gerufen, wenn’s brennt – in Küche, Bar oder Lieferdienst.
+            li
+              strong Ausbildung: Junior Barista / Küchenlehrling
+              | – Für junge Talente mit Feuer im Herzen.
+            li
+              strong Sicherheitsdienst / Zivile Unterstützung
+              | – Für alle, die lieber beschützen als zerschlagen.
+      hr
+      // Ausbildung & Training
+      .row
+        .col.text.text-right
+          h2 Ausbildung & Training
+          ul.list-style-none
+            li Wir bilden neue Mitglieder in Küche, Service und Handel aus – mit echter Leidenschaft und makofreier Energie.
+            li Ob du am Anfang stehst oder neu durchstartest – bei uns zählt, dass du lernst, was dich stärker macht.
+            li Melde dich unter 07-77-HEAVEN oder per Mail an 
+              a(href="mailto:hr@7thheaven-midgar.jp") hr@7thheaven-midgar.jp
+        .col.image
+          img.image-click(src="/static/images/gallerie/impressionen/impressionen_05.jpg" alt="HalliGalli")
+      hr
+      // Subtiler Avalanche-Bezug
+      .note.text-center
+        p „Manchmal reicht ein kleiner Funke, um die Welt zu verändern.“ – AVALANCHE
+
+    // Modal für Bildanzeige
+    #imageModal.modal
+      span.close ×
+      img.modal-content#modalImg

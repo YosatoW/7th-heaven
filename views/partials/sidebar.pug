@@ -1,0 +1,41 @@
+aside.sidebar
+  ul
+    each chap in chapters
+      - const isActiveChapter = chap.id === currentChapter
+      li.chapter(data-chapter=chap.id)
+        // Chapter-Link
+        a.chapter-link(href="javascript:void(0);")
+          span.arrow
+            img(src="/static/icons/drop-down.svg", alt="dropDown", class=isActiveChapter ? 'rotated' : '')
+          | #{chap.title}
+
+        // Subpages
+        if chap.subpages && chap.subpages.length
+          ul.submenu(style=isActiveChapter ? '' : 'display:none;')
+            each sub in chap.subpages
+              - const hasSubchapter = sub.subpages && sub.subpages.length > 0
+              li.subchapter
+                a.sub-link(
+                  class=(hasSubchapter ? 'has-subchapter' : '') + (currentSub === sub.id ? ' active-sub' : ''),
+                  href=hasSubchapter ? 'javascript:void(0);' : `${settingPath}/${sub.id}`
+                )
+                  span.arrow
+                    if hasSubchapter
+                      img(src="/static/icons/drop-down.svg", alt="dropDown")
+                  if !hasSubchapter
+                    span.logo
+                      img(src=sub.icon, alt=sub.title)
+                  | #{sub.title}
+
+                // SubSubpages
+                if hasSubchapter
+                  ul.sub-submenu(style=(sub.subpages.some(ss => ss.id === currentSub) ? '' : 'display:none;'))
+                    each subsub in sub.subpages
+                      li
+                        a.sub-link(
+                          class=(currentSub === subsub.id ? 'active-sub' : ''),
+                          href=`${settingPath}/${subsub.id}`
+                        )
+                          span.logo
+                            img(src=subsub.icon, alt=subsub.title)
+                          | #{subsub.title}

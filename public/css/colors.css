@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
+
+/*************************************************
+                GLOBAL STYLES
+*************************************************/
+:root {
+  /* --- FF7 ORIGINAL (PS1) --- */
+  --color-orig-mako:        #00A3A3;     /* Typisches Mako-Türkis */
+  --color-orig-ui-green:    #00FF90;     /* Menü-Text / Statusfenster */
+  --color-orig-metal:       #2C2C2C;     /* Dunkler Industrieton */
+  --color-orig-midgar-sky:  #4a6a6a;     /* Smogblauer Himmel */
+  --color-orig-shinra-red:  #B22222;     /* Shinra-Logo / Reaktorsymbole */
+  --color-orig-highlight:   #3ED6C3;     /* Logo-Glühen / Meteor-Schein */
+  --color-orig-earth:       #6B5C4B;     /* Erde / Hintergrundtexturen */
+  --color-orig-text:        #E0E0E0;     /* Standard-Textfarbe */
+  --color-orig-shadow:      #0B3B3B;     /* Tiefes Petrol für Schatten */
+
+  /* --- FF7 REMAKE --- */
+  --color-remake-mako:      #00B9C1;
+  --color-remake-glow:      #48E5C2;
+  --color-remake-ui:        #00FFB3;
+  --color-remake-metal:     #1E2328;
+  --color-remake-reactor:   #00F0D0;
+
+  /* --- MAKO & MATERIA --- */
+  --color-materia-magic:    #00FF90;     /* Grün */
+  --color-materia-summon:   #FF3B3B;     /* Rot */
+  --color-materia-support:  #1E90FF;     /* Blau */
+  --color-materia-command:  #FFD800;     /* Gelb */
+  --color-materia-special:  #A24BFF;     /* Lila */
+
+  --color-mako-core:        #00E0C0;     /* Inneres Leuchten */
+  --color-mako-reflect:     #B0FFF0;     /* Reflexlicht */
+
+  /* --- OPTIONAL NEUTRALS (Atmosphäre) --- */
+  --color-gray95:           #f9f9f9;
+  --color-gray80:           #eaeaea;
+  --color-gray60:           #999999;
+  --color-gray40:           #666666;
+  --color-greydark:         #57514d;
+  --color-black-metal:      #0B0C0D;
+  --color-shinra-red:       #9C1E1E;
+
+  --color-test:             #ff0000;
+
+  --color-main:         #E0E0E0;    /* --color-orig-text */
+  --color-header:       #4a6a6a;    /* --color-orig-midgar-sky */
+  --color-border:       #6B5C4B;    /* --color-orig-earth */
+
+  --color-dark:         #1E2328;    /* --color-black-metal */
+  --color-orig:         #E0E0E0;    /* --color-orig-text */
+  --color-titel:        #00A3A3;    /* --color-orig-mako */
+
+  --color-button:       #B0FFF0;    /* --color-mako-reflect */
+  --color-hover:        #00E0C0;    /* --color-mako-core */
+  --color-note:         #0B3B3B;    /* --color-orig-shadow */
+
+
+
+  --color-sub-hover:    var(--color-gray80);
+}

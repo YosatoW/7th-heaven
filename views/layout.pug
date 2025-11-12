@@ -1,0 +1,55 @@
+//- layout.pug
+
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 7th Heaven Bar
+
+    //- CSS
+    link(rel="stylesheet", href="/static/css/style.css")
+    link(rel="stylesheet", href="/static/libs/splide/splide.min.css")
+
+    //- Splide (Slider)
+    script(src="/static/libs/splide/splide.min.js")
+    script(src="/static/libs/splide/extensions/AutoScroll/splide-extension-auto-scroll.min.js")
+    script(src="/static/js/newsletter.js")
+    script(src="/static/js/cookie.js")
+    script(src="/static/js/contact.js")
+
+  body(class=pageClass)
+    include partials/header.pug
+    include partials/slider.pug
+    include partials/sliderauto.pug
+    include partials/gallery.pug
+
+    //- Haupt-Wrapper für Sticky Footer
+    main.page-wrapper
+      //- Seiteninhalt
+      block content
+
+    //- Footer
+    include partials/footer
+
+    //- Modal für Bilder
+    #imageModal.modal
+      span.close ×
+      img.modal-content#modalImg
+
+    //- Basis JS
+    script(src="/static/js/header.js")
+    script(src="/static/js/sliders.js")
+    script(src="/static/js/image-modal.js")
+
+    //- Platz für Seiten-spezifische Scripts
+    block scripts
+
+#cookiepopup.popup(style="display: none")
+  .popup-content
+    span.close(onclick="closecookiepopup()") ×
+    h3 Achtung, Reisender!
+    p Diese Website verwendet keine Cookies, aber wir respektieren deine Privatsphäre – viel Spass in der 7th Heaven Bar!
+    button.button1(onclick="closecookiepopup()") Alles klar!
+
+
