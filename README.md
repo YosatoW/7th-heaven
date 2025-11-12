@@ -55,9 +55,10 @@ Die einfachste Möglichkeit, das Projekt zu starten:
 ## Projekt herunterladen
 
 ### Option A: Git Clone
+- VS Code öffnen und in Terminal eingeben:
 ```ps1
 git clone https://github.com/YosatoW/7th-heaven.git
-cd 7th-heaven
+code 7th-heaven
 ```
 
 ### Option B: ZIP Download
