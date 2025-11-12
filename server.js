@@ -6,7 +6,6 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const session = require('express-session');
-// const initializeAPI = require('./src/api/api');
 const contactRouter = require('./src/contact');
 const newsletterRouter = require('./src/newsletter');
 
@@ -17,7 +16,7 @@ const newsletterRouter = require('./src/newsletter');
 
 // ──────────────────── Server-Einstellungen ────────────────────
 const app = express();
-const port = 3300;
+const port = 3000;
 const basePath = '';
 
 app.locals.basePath = basePath;
@@ -46,7 +45,6 @@ app.use(session({
 
 // ──────────────────── Initialisierung der API ────────────────────
 const apiRouter = express.Router();
-// initializeAPI(apiRouter);
 apiRouter.use('/contact', contactRouter);
 apiRouter.use('/newsletter', newsletterRouter);
 app.use('/api', apiRouter);
@@ -120,7 +118,7 @@ function renderPage(res, view, data = {}) {
 // ──────────────────── Startseite ────────────────────
 app.get(`${basePath}/`, (req, res) => {
   const sliderData = JSON.parse(fs.readFileSync('./public/json/slider.json', 'utf-8'));
-  renderPage(res, 'home', {
+  renderPage(res, './page/home', {
     firstPageLink: getFirstPageLink(),
     sliders: sliderData.sliders
   });
@@ -128,12 +126,12 @@ app.get(`${basePath}/`, (req, res) => {
 
 // Wartungsseite
 app.get('/maintenance', (req, res) => {
-  res.status(503).render('route-maintenance', { title: 'Wartungsmodus' });
+  res.status(503).render('page/route/route-maintenance', { title: 'Wartungsmodus' });
 });
 
 // 404-Seite
 app.get('/404', (req, res) => {
-  res.status(404).render('route-404', { title: 'Seite nicht gefunden' });
+  res.status(404).render('page/route/route-404', { title: 'Seite nicht gefunden' })
 });
 
 app.get('/:id', (req, res) => {
@@ -149,8 +147,8 @@ app.get('/:id', (req, res) => {
 
     const file = path.join(__dirname, 'views', 'page', `${pageId}.pug`);
     const viewPath = fs.existsSync(file)
-      ? `page/${pageId}`
-      : 'route-maintenance';
+      ? `page/${pageId}` // ✅ direkt pageId verwenden
+      : 'page/route/route-maintenance';
 
     return res.render(viewPath, { title: topbarPage.title });
   }
@@ -168,13 +166,12 @@ app.get('/:id', (req, res) => {
     return res.redirect('/maintenance');
   }
 
-  // Pfad zur Datei korrekt auflösen
   const folder = chapter.id;
   const file = path.join(__dirname, 'views', 'page', folder, `${pageId}.pug`);
 
   const viewPath = fs.existsSync(file)
     ? `page/${folder}/${pageId}`
-    : 'route-maintenance';
+    : 'page/route/route-maintenance';
 
   res.render(viewPath, { title: subObj ? subObj.title : chapter.title });
 });
