@@ -105,9 +105,7 @@ docker compose up -d --build
 ```
 
 ### Im Browser öffnen
-- App: http://localhost:80
-- API: http://localhost/api/newsletter
-- Drizzle Studio: http://localhost:8080
+- App: [http://localhost:80](http://localhost:80)
 
 ---
 
