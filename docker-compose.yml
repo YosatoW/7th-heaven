@@ -19,9 +19,9 @@ services:
     ports:
       - "5432:5432"
     environment:
+      POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
     volumes:
       - ./docker-data/postgres:/var/lib/postgresql/data
     healthcheck:
@@ -30,7 +30,18 @@ services:
       timeout: 3s
       retries: 10
 
-  # API 1 (npm / Port 3300)
+  migration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: migration
+    command: npx drizzle-kit push
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@webengineering:5432/${POSTGRES_DB}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   minitwitter1:
     build:
       context: .
@@ -39,12 +50,12 @@ services:
     restart: always
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@webengineering:5432/${POSTGRES_DB}
-      command: /bin/sh -c "npx drizzle-kit push && node server.js"
       NODE_ENV: production
-      PORT: 3300
+      PORT: 3000
+    command: node server.js
     depends_on:
-      postgres:
-        condition: service_healthy
+      migration:
+        condition: service_completed_successfully
 
   minitwitter2:
     build:
@@ -54,9 +65,9 @@ services:
     restart: always
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@webengineering:5432/${POSTGRES_DB}
-      command: /bin/sh -c "npx drizzle-kit push && node server.js"
       NODE_ENV: production
-      PORT: 3300
+      PORT: 3000
+    command: node server.js
     depends_on:
-      postgres:
-        condition: service_healthy
+      migration:
+        condition: service_completed_successfully

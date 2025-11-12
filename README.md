@@ -10,15 +10,16 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
   - [1.1. 💠 Features](#11--features)
   - [1.2. 🐋 Docker – Schnellstart](#12--docker--schnellstart)
     - [1.2.1. **Docker installieren**](#121-docker-installieren)
-    - [1.2.2. **Container starten**](#122-container-starten)
-    - [1.2.3. **Im Broswser öffnen**](#123-im-broswser-öffnen)
+    - [Git installieren (optional)](#git-installieren-optional)
+  - [Projekt herunterladen](#projekt-herunterladen)
+    - [Option A: Git Clone](#option-a-git-clone)
+    - [Option B: ZIP Download](#option-b-zip-download)
   - [1.3. **.env Datei (Konfiguration)**](#13-env-datei-konfiguration)
-  - [1.4. **Entwicklung (optional)**](#14-entwicklung-optional)
-  - [1.5. **Entwicklung (optional)**](#15-entwicklung-optional)
   - [1.6. **Projektstruktur**](#16-projektstruktur)
-  - [1.7. **Stil \& Atmosphäre**](#17-stil--atmosphäre)
-  - [1.8. **404 im Midgar-Stil**](#18-404-im-midgar-stil)
-  - [1.9. **Docker Hub**](#19-docker-hub)
+  - [Starten](#starten)
+    - [Container bauen und stearten](#container-bauen-und-stearten)
+    - [Im Browser öffnen](#im-browser-öffnen)
+  - [Optional: Lokale Entwicklung ohne Docker](#optional-lokale-entwicklung-ohne-docker)
 <!-- /ToC -->
 
 ---
@@ -31,7 +32,8 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 - 🔹 Galerie mit Impressionen aus dem 7th Heaven
 - 🔹 Fehlerseiten im Midgar-Stil
 - 🔹 Docker-Setup für einfache Installation & Deployment
-- 🔹 `.env`-Datei für konfigurierbare Umgebungsvariablen  
+- 🔹 `.env`-Datei für konfigurierbare Umgebungsvariablen
+- 🔹 Automatische Migration mit Drizzle ORM
 
 
 ## 1.2. 🐋 Docker – Schnellstart
@@ -39,17 +41,28 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 Die einfachste Möglichkeit, das Projekt zu starten:
 
 ### 1.2.1. **Docker installieren**
-Falls noch nicht vorhanden:  
+- Falls noch nicht vorhanden:<br>
 👉 [https://www.docker.com/get-started](https://www.docker.com/get-started)
+- Installiere und starte Docker Desktop
 
-### 1.2.2. **Container starten**
+### Git installieren (optional)
+- Lade Git herunter:<br>
+👉 [https://git-scm.com/downloads](https://git-scm.com/downloads)
+- Installiere Git, falls du den Code direkt von GitHub klonen möchtest.
 
-```bash
-docker run -d -p 3000:3000 wotasoy/7th-heaven:latest
+---
+
+## Projekt herunterladen
+
+### Option A: Git Clone
+```ps1
+git clone https://github.com/YosatoW/7th-heaven.git
+cd 7th-heaven
 ```
 
-### 1.2.3. **Im Broswser öffnen**
-👉 [https://localhost:3000](https://localhost:3000)
+### Option B: ZIP Download
+- Lade das Projekt als ZIP von GitHub herunter.
+- Entpacke es in einen Ordner deiner Wahl.
 
 ---
 
@@ -59,39 +72,12 @@ muss im Projekt-Root eine Datei namens `.env` erstellt werden.
 
 Diese enthält deine grundlegenden Umgebungsvariablen, z. B.:
 ```env
-DATABASE_URL=
+DATABASE_URL=postgresql://[POSTGRES_USER]:[POSTGRES_PASSWORD]@webengineering:5432/[POSTGRES_DB]
 POSTGRES_USER=
 POSTGRES_PASSWORD=
 POSTGRES_DB=
 ```
 *(Die Datei .env wird nicht in GitHub hochgeladen – sie bleibt lokal.)*
-
----
-
-## 1.4. **Entwicklung (optional)**
-Wenn du den Code lokal staten möchtest:
-```bash
-git clone https://github.com/YosatoW/7th-heaven.git
-cd 7th-heaven
-npm install
-npm start
-```
-
----
-
-## 1.5. **Entwicklung (optional)**
-Wenn du den Code lokal staten möchtest:
-
-```ps1
-docker build -t wotasoy/7th-heaven:latest .
-docker run -d -p 3000:3000 wotasoy/7th-heaven:latest
-```
-Oder mit Compose:
-
-```ps1
-
-docker compose up -d --build
-```
 
 ---
 
@@ -112,21 +98,21 @@ docker compose up -d --build
 
 ---
 
-## 1.7. **Stil & Atmosphäre**
-> „In einer Stadt, die niemals schläft, braucht jeder einen Ort, an dem er kurz vergessen kann, wer er ist.“
-— *Tifa Lockhart*
+## Starten
+### Container bauen und stearten
+```ps1
+docker compose up -d --build
+```
 
-Dieses Projekt greift visuelle und erzählerische Elemente aus Midgar und dem 7th Heaven auf:
-Rostige Rohre, sanftes Licht, metallischer Glanz – und ein Hauch von Nostalgie.
-Selbst eine einfache 404-Seite erzählt hier eine kleine Geschichte.
+### Im Browser öffnen
+- App: http://localhost:80
+- API: http://localhost/api/newsletter
+- Drizzle Studio: http://localhost:8080
 
 ---
 
-## 1.8. **404 im Midgar-Stil**
-> ❌ 404 — Ort nicht gefunden<br>
-Die Moiren haben diesen Pfad aus dem Schicksalsgeflecht geschnitten.
-Vielleicht warst du nie dazu bestimmt, ihn zu betreten...
-Kehre sicher zum 7th Heaven zurück.
-
-## 1.9. **Docker Hub**
-Image: [https://hub.docker.com/r/HalliGalli/7th-heaven](https://hub.docker.com/r/HalliGalli/7th-heaven)
+## Optional: Lokale Entwicklung ohne Docker
+```ps1
+npm install
+npm run dev
+```
