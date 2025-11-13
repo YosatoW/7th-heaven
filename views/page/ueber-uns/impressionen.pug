@@ -3,17 +3,16 @@ extends ../../layout.pug
 block content
   section.page-left
     .container
-      .intro-block
+      .intro-block.text-center
         h1 Impressionen
-        .text-center
-          p Wir sind stolz darauf, in diesem kleinen Bijou – unserer eigenen Oase im Herzen von Midgar – zu wirken.
-          p Mit Leidenschaft, Herz und einer Portion 7th-Heaven-Magie verwöhnen wir unsere Gäste von früh bis spät.
-          p Unsere Küche verbindet vertraute, bodenständige Gerichte mit kreativen Eigeninterpretationen – frisch zubereitet, inspiriert von den Märkten der Oberstadt und den ehrlichen Aromen der Unterstadt.
-          p Dazu servieren wir eine herzliche, aufmerksame Bedienung, die den Geist unseres Hauses ausmacht: warm, einladend und voller Lebensenergie.
-          p Bei uns geht es nicht nur ums Essen – es geht um das Gefühl, für einen Moment dem Lärm der Stadt zu entkommen und echte Gemeinschaft zu erleben.
+        p Wir sind stolz darauf, in diesem kleinen Bijou – unserer eigenen Oase im Herzen von Midgar – zu wirken.
+        p Mit Leidenschaft, Herz und einer Portion 7th-Heaven-Magie verwöhnen wir unsere Gäste von früh bis spät.
+        p Unsere Küche verbindet vertraute, bodenständige Gerichte mit kreativen Eigeninterpretationen – frisch zubereitet, inspiriert von den Märkten der Oberstadt und den ehrlichen Aromen der Unterstadt.
+        p Dazu servieren wir eine herzliche, aufmerksame Bedienung, die den Geist unseres Hauses ausmacht: warm, einladend und voller Lebensenergie.
+        p Bei uns geht es nicht nur ums Essen – es geht um das Gefühl, für einen Moment dem Lärm der Stadt zu entkommen und echte Gemeinschaft zu erleben.
 
-      - const gallery = getGallery("impressionen")
+    - const gallery = getGallery("impressionen")
 
-      +gallery(gallery)
+    +gallery(gallery)
 
 

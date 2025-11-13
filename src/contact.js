@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const { firstname, lastname, email, tel, address, plz, city, comments, privacy } = req.body;
 
-  if (!firstname || !lastname || !email) {
+  if (!firstname || !lastname || !email || !comments) {
     return res.status(400).json({
       success: false,
       message: "Bitte alle Pflichtfelder ausfüllen."

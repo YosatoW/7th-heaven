@@ -7,24 +7,28 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 
 <!-- ToC -->
 - [1. ☕ 7th Heaven – Midgar Edition](#1--7th-heaven--midgar-edition)
-  - [1.1. 💠 Features](#11--features)
-  - [1.2. 🐋 Docker – Schnellstart](#12--docker--schnellstart)
-    - [1.2.1. **Docker installieren**](#121-docker-installieren)
-    - [Git installieren (optional)](#git-installieren-optional)
-  - [Projekt herunterladen](#projekt-herunterladen)
-    - [Option A: Git Clone](#option-a-git-clone)
-    - [Option B: ZIP Download](#option-b-zip-download)
-  - [1.3. **.env Datei (Konfiguration)**](#13-env-datei-konfiguration)
-  - [1.6. **Projektstruktur**](#16-projektstruktur)
-  - [Starten](#starten)
-    - [Container bauen und stearten](#container-bauen-und-stearten)
-    - [Im Browser öffnen](#im-browser-öffnen)
-  - [Optional: Lokale Entwicklung ohne Docker](#optional-lokale-entwicklung-ohne-docker)
+- [2. 💠 Features](#2--features)
+- [3. 🐋 Docker – Schnellstart](#3--docker--schnellstart)
+  - [3.1. **Docker installieren**](#31-docker-installieren)
+  - [3.2. Git installieren (optional)](#32-git-installieren-optional)
+- [4. Projekt herunterladen](#4-projekt-herunterladen)
+  - [4.1. Option A: Git Clone](#41-option-a-git-clone)
+  - [4.2. Option B: ZIP Download](#42-option-b-zip-download)
+- [5. **.env Datei (Konfiguration)**](#5-env-datei-konfiguration)
+- [6. **Projektstruktur**](#6-projektstruktur)
+- [7. überprüfen, ob Port 80 (HTTP) auf deinem System frei oder belegt ist.](#7-überprüfen-ob-port-80-http-auf-deinem-system-frei-oder-belegt-ist)
+  - [7.1. Windows](#71-windows)
+  - [7.2. Linux/macOS](#72-linuxmacos)
+  - [7.3. Port ändern](#73-port-ändern)
+- [8. Starten](#8-starten)
+  - [8.1. Container bauen und stearten](#81-container-bauen-und-stearten)
+  - [8.2. Im Browser öffnen](#82-im-browser-öffnen)
+- [9. Lokale Entwicklung ohne Docker (optional)](#9-lokale-entwicklung-ohne-docker-optional)
 <!-- /ToC -->
 
 ---
 
-## 1.1. 💠 Features
+# 2. 💠 Features
 
 - 🔹 Node.js + Express Backend
 - 🔹 Pug Templates für flexible Views
@@ -36,38 +40,38 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 - 🔹 Automatische Migration mit Drizzle ORM
 
 
-## 1.2. 🐋 Docker – Schnellstart
+# 3. 🐋 Docker – Schnellstart
 
 Die einfachste Möglichkeit, das Projekt zu starten:
 
-### 1.2.1. **Docker installieren**
+## 3.1. **Docker installieren**
 - Falls noch nicht vorhanden:<br>
 👉 [https://www.docker.com/get-started](https://www.docker.com/get-started)
-- Installiere und starte Docker Desktop
+- Installiere und **starte Docker Desktop**
 
-### Git installieren (optional)
+## 3.2. Git installieren (optional)
 - Lade Git herunter:<br>
 👉 [https://git-scm.com/downloads](https://git-scm.com/downloads)
 - Installiere Git, falls du den Code direkt von GitHub klonen möchtest.
 
 ---
 
-## Projekt herunterladen
+# 4. Projekt herunterladen
 
-### Option A: Git Clone
-- VS Code öffnen und in Terminal eingeben:
+## 4.1. Option A: Git Clone
+- Befehl in VS Code Terminal eingeben:
 ```ps1
 git clone https://github.com/YosatoW/7th-heaven.git
 code 7th-heaven
 ```
 
-### Option B: ZIP Download
+## 4.2. Option B: ZIP Download
 - Lade das Projekt als ZIP von GitHub herunter.
 - Entpacke es in einen Ordner deiner Wahl.
 
 ---
 
-## 1.3. **.env Datei (Konfiguration)**
+# 5. **.env Datei (Konfiguration)**
 Bevor du die Anwendung startest (lokal oder per Docker),
 muss im Projekt-Root eine Datei namens `.env` erstellt werden.
 
@@ -82,7 +86,7 @@ POSTGRES_DB=
 
 ---
 
-## 1.6. **Projektstruktur**
+# 6. **Projektstruktur**
 ```csharp
 7th-heaven/
 ├── views/                # Pug Templates
@@ -91,7 +95,7 @@ POSTGRES_DB=
 │   └── page/
 ├── public/               # Statische Dateien (CSS, JS, Bilder)
 ├── src/                  # API / Datenbank / Utils
-├── server.js                # Hauptserver
+├── server.js             # Hauptserver
 ├── docker-compose.yml
 ├── Dockerfile
 └── README.md
@@ -99,18 +103,60 @@ POSTGRES_DB=
 
 ---
 
-## Starten
-### Container bauen und stearten
+# 7. überprüfen, ob Port 80 (HTTP) auf deinem System frei oder belegt ist.
+## 7.1. Windows
+1. Eingabeaufforderung (CMD oder PowerShell) öffnen
+2. Befhel eingeben:
+```ps1
+netstat -aon | find ":80"
+```
+3. Wenn du eine Zeile siehst wie:
+```nginx
+TCP    0.0.0.0:80    0.0.0.0:0    LISTENING    1234
+```
+Dann ist **Port 80** belebt, und der Prozess mit der **PID 1234** nutz ihn.
+
+## 7.2. Linux/macOS
+1. Terminal öffnen
+2. Variante 1 - mit `ss` (empfohlen, moderner):
+```ps1
+sudo ss -tuln | grep ':80'
+```
+
+3. Variante 1 - mit `netstat`:
+```ps1
+sudo netstat -tuln | grep ':80'
+```
+
+4. Variante 1 - mit `lsof`:
+```ps1
+sudo lsof -i :80
+```
+- wenn du Prozesse siehst, nutzt jemand Port 80
+- wenn nichts zurückkommt, ist der Port frei.
+
+## 7.3. Port ändern
+- Ändere in `docker-compose.yml` den `load-balancer` auf ein freue Port
+- z.B. in  `8080:80` oder andere freie Ports.
+
+---
+
+# 8. Starten
+## 8.1. Container bauen und stearten
 ```ps1
 docker compose up -d --build
 ```
 
-### Im Browser öffnen
-- App: [http://localhost:80](http://localhost:80)
+## 8.2. Im Browser öffnen
+- [http://localhost:80](http://localhost:80)
+- [http://localhost:80/api/contact](http://localhost:80/api/contact)
+- [http://localhost:80/api/newsletter](http://localhost:80/api/newsletter)
+
+Port anpassen wenn nötig.
 
 ---
 
-## Optional: Lokale Entwicklung ohne Docker
+# 9. Lokale Entwicklung ohne Docker (optional)
 ```ps1
 npm install
 npm run dev

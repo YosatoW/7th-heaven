@@ -25,8 +25,8 @@ block content
           input#email(type="email" name="email" required)
 
         .form-group
-          label(for="tel") Telefon *
-          input#tel(type="text" name="tel" required)
+          label(for="tel") Telefon
+          input#tel(type="text" name="tel")
 
         .form-group
           label(for="address") Adresse
@@ -41,8 +41,8 @@ block content
           input#city(type="text" name="city")
 
       .form-group.full-width
-        label(for="comments") Bemerkungen
-        textarea#comments(name="comments" rows="4")
+        label(for="comments") Bemerkungen *
+        textarea#comments(name="comments" rows="4" required)
 
       .form-actions
         .form-group.checkbox

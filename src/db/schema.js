@@ -16,7 +16,7 @@ const contactTable = pgTable("contactaddress", {
   address: varchar("adresse", { length: 255 }),
   plz: varchar("plz", { length: 10 }),
   city: varchar("ort", { length: 100 }),
-  comments: varchar("Bemerkung", { length: 255 })
+  comments: varchar("Bemerkung", { length: 255 }).notNull()
 });
 
 module.exports = {

@@ -3,7 +3,7 @@
     "topbar": [
       { "id": "events", "title": "Events & Aktuelles", "href": "/events", "maintenance": true },
       { "id": "stiftung", "title": "Stiftung", "href": "/stiftung", "maintenance": false },
-      { "id": "jobs", "title": "Freie Stellen", "href": "/jobs", "maintenance": false }
+      { "id": "jobs", "title": "Alleskönner", "href": "/jobs", "maintenance": false }
     ],
     "chapters": [
       {

@@ -13,19 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Schließen mit X
+  // Schliessen mit X
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // Schließen bei Klick ausserhalb des Bildes
+  // Schliessen bei Klick ausserhalb des Bildes
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
     }
   });
 
-  // ESC zum Schließen
+  // ESC zum Schliessen
   document.addEventListener("keyup", (e) => {
     if (e.key === "Escape") {
       modal.style.display = "none";

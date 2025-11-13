@@ -4,82 +4,82 @@
       "id": "slider-home",
       "type": "thumbnail",
       "images": [
-        "/static/images/gallerie/impressionen/impressionen_01.jpg",
-        "/static/images/gallerie/impressionen/impressionen_02.jpg",
-        "/static/images/gallerie/impressionen/impressionen_03.jpg",
-        "/static/images/gallerie/impressionen/impressionen_04.jpg",
-        "/static/images/gallerie/impressionen/impressionen_05.jpg",
-        "/static/images/gallerie/impressionen/impressionen_06.jpg",
-        "/static/images/gallerie/impressionen/impressionen_07.jpg",
-        "/static/images/gallerie/impressionen/impressionen_08.jpg",
-        "/static/images/gallerie/impressionen/impressionen_09.jpg",
-        "/static/images/gallerie/impressionen/impressionen_10.jpg",
-        "/static/images/gallerie/impressionen/impressionen_11.jpg",
-        "/static/images/gallerie/impressionen/impressionen_12.jpg",
-        "/static/images/gallerie/location/location-inside_01.jpg",
-        "/static/images/gallerie/location/location-inside_02.jpg",
-        "/static/images/gallerie/location/location-inside_03.jpg",
-        "/static/images/gallerie/location/location-inside_04.jpg",
-        "/static/images/gallerie/location/location-inside_05.jpg",
-        "/static/images/gallerie/location/location-inside_01.jpg",
-        "/static/images/gallerie/location/location-inside_02.jpg",
-        "/static/images/gallerie/location/location-inside_03.jpg",
-        "/static/images/gallerie/location/location-inside_04.jpg"
+        "/static/images/gallery/impressionen/impressionen_01.jpg",
+        "/static/images/gallery/impressionen/impressionen_02.jpg",
+        "/static/images/gallery/impressionen/impressionen_03.jpg",
+        "/static/images/gallery/impressionen/impressionen_04.jpg",
+        "/static/images/gallery/impressionen/impressionen_05.jpg",
+        "/static/images/gallery/impressionen/impressionen_06.jpg",
+        "/static/images/gallery/impressionen/impressionen_07.jpg",
+        "/static/images/gallery/impressionen/impressionen_08.jpg",
+        "/static/images/gallery/impressionen/impressionen_09.jpg",
+        "/static/images/gallery/impressionen/impressionen_10.jpg",
+        "/static/images/gallery/impressionen/impressionen_11.jpg",
+        "/static/images/gallery/impressionen/impressionen_12.jpg",
+        "/static/images/gallery/location/location-inside_01.jpg",
+        "/static/images/gallery/location/location-inside_02.jpg",
+        "/static/images/gallery/location/location-inside_03.jpg",
+        "/static/images/gallery/location/location-inside_04.jpg",
+        "/static/images/gallery/location/location-inside_05.jpg",
+        "/static/images/gallery/location/location-inside_01.jpg",
+        "/static/images/gallery/location/location-inside_02.jpg",
+        "/static/images/gallery/location/location-inside_03.jpg",
+        "/static/images/gallery/location/location-inside_04.jpg"
       ]
     },
     {
       "id": "slider-maintenance",
       "type": "basic",
       "images": [
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/bahamut.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/chocobo-küken.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/kaktor.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/mini-esper.jpg"
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/bahamut.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/chocobo-kueken.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/kaktor.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/mini-esper.jpg"
       ]
     },
     {
       "id": "slider-maintenance1",
       "type": "basic",
       "images": [
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/bahamut.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/chocobo-küken.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/kaktor.jpg",
-        "/static/images/gallerie/web/fat-chocobo.jpg",
-        "/static/images/gallerie/web/mini-esper.jpg"
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/bahamut.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/chocobo-küken.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/kaktor.jpg",
+        "/static/images/gallery/web/fat-chocobo.jpg",
+        "/static/images/gallery/web/mini-esper.jpg"
       ]
     },
     {
       "id": "slider-locationinside",
       "type": "basic",
       "images": [
-        "/static/images/gallerie/location/location-inside_01.jpg",
-        "/static/images/gallerie/location/location-inside_02.jpg",
-        "/static/images/gallerie/location/location-inside_03.jpg",
-        "/static/images/gallerie/location/location-inside_04.jpg",
-        "/static/images/gallerie/location/location-inside_05.jpg"
+        "/static/images/gallery/location/location-inside_01.jpg",
+        "/static/images/gallery/location/location-inside_02.jpg",
+        "/static/images/gallery/location/location-inside_03.jpg",
+        "/static/images/gallery/location/location-inside_04.jpg",
+        "/static/images/gallery/location/location-inside_05.jpg"
       ]
     },
     {
       "id": "slider-locationoutside",
       "type": "basic",
       "images": [
-        "/static/images/gallerie/location/location-outside_01.jpg",
-        "/static/images/gallerie/location/location-outside_02.jpg",
-        "/static/images/gallerie/location/location-outside_03.jpg",
-        "/static/images/gallerie/location/location-outside_04.jpg",
-        "/static/images/gallerie/location/location-outside_05.jpg",
-        "/static/images/gallerie/location/location-outside_06.jpg",
-        "/static/images/gallerie/location/location-outside_07.jpg",
-        "/static/images/gallerie/location/location-outside_08.jpg",
-        "/static/images/gallerie/location/location-outside_09.jpg",
-        "/static/images/gallerie/location/location-outside_10.jpg"
+        "/static/images/gallery/location/location-outside_01.jpg",
+        "/static/images/gallery/location/location-outside_02.jpg",
+        "/static/images/gallery/location/location-outside_03.jpg",
+        "/static/images/gallery/location/location-outside_04.jpg",
+        "/static/images/gallery/location/location-outside_05.jpg",
+        "/static/images/gallery/location/location-outside_06.jpg",
+        "/static/images/gallery/location/location-outside_07.jpg",
+        "/static/images/gallery/location/location-outside_08.jpg",
+        "/static/images/gallery/location/location-outside_09.jpg",
+        "/static/images/gallery/location/location-outside_10.jpg"
 
       ]
     },
@@ -87,14 +87,14 @@
       "id": "slider-impressionen",
       "type": "thumbnail",
       "images": [
-        "/static/images/gallerie/impressionen/impressionen_03.jpg",
-        "/static/images/gallerie/impressionen/impressionen_04.jpg",
-        "/static/images/gallerie/impressionen/impressionen_07.jpg",
-        "/static/images/gallerie/impressionen/impressionen_08.jpg",
-        "/static/images/gallerie/impressionen/impressionen_09.jpg",
-        "/static/images/gallerie/impressionen/impressionen_10.jpg",
-        "/static/images/gallerie/impressionen/impressionen_11.jpg",
-        "/static/images/gallerie/impressionen/impressionen_12.jpg"
+        "/static/images/gallery/impressionen/impressionen_03.jpg",
+        "/static/images/gallery/impressionen/impressionen_04.jpg",
+        "/static/images/gallery/impressionen/impressionen_07.jpg",
+        "/static/images/gallery/impressionen/impressionen_08.jpg",
+        "/static/images/gallery/impressionen/impressionen_09.jpg",
+        "/static/images/gallery/impressionen/impressionen_10.jpg",
+        "/static/images/gallery/impressionen/impressionen_11.jpg",
+        "/static/images/gallery/impressionen/impressionen_12.jpg"
       ]
     }
   ]

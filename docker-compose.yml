@@ -1,4 +1,5 @@
-name: TA-WebEngineering
+name: 7th-heaven
+version: '3.8'
 services:
   load-balancer:
     image: nginx:alpine

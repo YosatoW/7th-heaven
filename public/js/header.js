@@ -3,6 +3,7 @@
 // Scroll-Verhalten für Header-Hintergrund
 document.addEventListener("scroll", () => {
   const header = document.querySelector(".site-header");
+  if (!header) return;
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
@@ -11,43 +12,77 @@ document.addEventListener("scroll", () => {
 });
 
 
-// menüanzeige für mobile geräte
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
+// Mobile & Desktop Navigation
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  // Guard
+  if (!toggle || !mobileMenu) return;
 
   // Mobile-Menü Toggle
-  toggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("show");
   });
 
-  // Klick außerhalb schließt Menü
-  document.addEventListener('click', (e) => {
+  // Klick ausserhalb schliesst Menü
+  document.addEventListener("click", (e) => {
     if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
-      mobileMenu.classList.remove('show');
-      document.querySelectorAll('.sub').forEach(sub => sub.classList.remove('show'));
+      mobileMenu.classList.remove("show");
+      document.querySelectorAll(".sub.show").forEach((sub) => sub.classList.remove("show"));
     }
   });
 
-  // Submenü-Logik für Touch-Geräte und große Tablets
-  document.querySelectorAll('.nav-area .menu-chapter > a').forEach(link => {
-    link.addEventListener('click', (e) => {
+  // Submenü-Logik – Desktop-Bereich (.nav-area)
+  // Click öffnet Submenü nur auf Geräten ohne Hover (Touch)
+  document.querySelectorAll(".nav-area .menu-chapter > a").forEach((link) => {
+    link.addEventListener("click", (e) => {
       const submenu = link.nextElementSibling;
+      if (!submenu) return;
 
-      if (submenu) {
-        // Prüfen, ob Gerät Touch hat oder kein Hover möglich ist
-        if (window.matchMedia('(hover: none)').matches) {
-          e.preventDefault(); // verhindert Navigation
-          // Alle anderen Submenüs schließen
-          document.querySelectorAll('.nav-area .menu-chapter ul.sub').forEach(sub => {
-            if (sub !== submenu) sub.classList.remove('show');
+      // Nur auf Touch/ohne Hover das Navigieren verhindern
+      if (window.matchMedia("(hover: none)").matches) {
+        e.preventDefault();
+
+        // Alle anderen Submenüs schliessen
+        document
+          .querySelectorAll(".nav-area .menu-chapter ul.sub.show")
+          .forEach((sub) => {
+            if (sub !== submenu) sub.classList.remove("show");
           });
-          submenu.classList.toggle('show');
-        }
+
+        submenu.classList.toggle("show");
       }
+    })
+  });
+
+  
+  // -----------------------------
+  // Submenü-Logik – Mobile-Bereich (.mobile-menu)
+  // IMMER: Erster Tap öffnet Submenü, verhindert Navigation
+  // -----------------------------
+  mobileMenu.addEventListener("click", (e) => {
+    const link = e.target.closest(".menu-chapter > a");
+    if (!link) return;
+
+    const submenu = link.nextElementSibling;
+    if (!submenu) return; // Kapitel ohne Sub – normal navigieren
+
+    // In der mobilen Navigation immer zuerst Submenü toggeln
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Andere Submenüs in der mobilen Navigation schliessen
+    mobileMenu.querySelectorAll(".menu-chapter ul.sub.show").forEach((sub) => {
+      if (sub !== submenu) sub.classList.remove("show");
     });
+
+    submenu.classList.toggle("show");
   });
 });
+
+
 
 
 

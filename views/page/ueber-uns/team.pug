@@ -1,43 +1,45 @@
+//- views/page/ueber-uns/team.pug
 extends ../../layout.pug
 
 block content
   section.page-left
     .container
       .intro-block.text-center
-        h1 Unser Team 
-        p Im 7th Heaven servieren wir nicht nur Drinks und Gerichte – wir schenken Menschen einen moment Ruhe in einer lauten Welt. 
-        p Unser Team steht für Zusammenhalt, Mut und Fairness – Werte, die auch ausserhalb der Bar zählen. 
+        h1 Unser Team
+        p Im 7th Heaven servieren wir nicht nur Drinks und Gerichte – wir schenken Menschen einen moment Ruhe in einer lauten Welt.
+        p Unser Team steht für Zusammenhalt, Mut und Fairness – Werte, die auch ausserhalb der Bar zählen.
         p Sei Teil einer Gemeinschaft, die wie Avalanche an etwas Grösseres glaubt: dass jeder Mensch einen Platz verdient, an dem er aufblühen kann.
-
+      hr
       // Tifa Lockhart
-      .team-member
-        img.image-click(src="/static/images/team/tifa.png" alt="Tifa Lockhart")
-        .info
-          h2 Tifa Lockhart – Inhaberin & Herz des 7th Heaven 🍸
+      .row
+        .col.image
+          img.image-click(src="/static/images/team/tifa.png", alt="Tifa Lockhart")
+        .col.text
+          h2 Tifa Lockhart – Inhaberin &amp; Herz des 7th Heaven 🍸
           p Tifa ist nicht nur Barkeeperin, sondern auch die Seele des 7th Heaven.
           p Mit einem Lächeln serviert sie Drinks, die selbst einen SOLDAT umhauen würden.
           p Hinter der Theke hat sie alles im Griff – ob beim Shaken, Mixen oder im Notfall mit einem rechten Haken. 💪✨
-
+      hr
       // Barret Wallace
-      .team-member
-        img.image-click(src="/static/images/team/barret.png" alt="Barret Wallace")
-        .info
-          h2 Barret Wallace – Sicherheitschef & Stimmungsmotor 💥
+      .row
+        .col.image
+          img.image-click(src="/static/images/team/barret.png", alt="Barret Wallace")
+        .col.text
+          h2 Barret Wallace – Sicherheitschef &amp; Stimmungsmotor 💥
           p Barret sorgt dafür, dass im 7th Heaven alles ruhig bleibt… zumindest meistens.
           p Seine Donnerstimme übertönt jede Jukebox, und seine Begeisterung für gute Gesellschaft ist legendär.
           p Wenn er nicht gerade an Shinra schimpft, hilft er beim Fässerrollen oder erzählt Geschichten aus den Slums. 🔧🔥
-
+      hr
       // Jessie, Biggs & Wedge
-      .team-member
-        img.image-click(src="/static/images/team/JessieBiggsWedge.png" alt="Jessie, Biggs & Wedge")
-        .info
-          h2 Jessie, Biggs & Wedge – Die Crew 🎭
+      .row
+        .col.image
+          img.image-click(src="/static/images/team/JessieBiggsWedge.png", alt="Jessie, Biggs &amp; Wedge")
+        .col.text
+          h2 Jessie, Biggs &amp; Wedge – Die Crew 🎭
           p Dieses Trio bringt nicht nur Action, sondern auch Herz und Humor ins 7th Heaven.
           p Jessie sorgt für Technik und Charme, Biggs für Strategie und ruhige Nerven, und Wedge für gute Laune (und Snacks).
           p Gemeinsam sind sie die heimlichen Helden hinter den Kulissen – immer bereit für den nächsten Coup gegen Shinra. ⚡🔥
-  
-  
-  
+
   // Modal für Bildanzeige
   #imageModal.modal
     span.close ×
