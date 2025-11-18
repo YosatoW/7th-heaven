@@ -16,15 +16,15 @@ block content
         .col.text.text-center
           h2 Standort
           ul.list-style-none
-            li 7th Heaven Bar
-            li Sector 7 Slums, Midgar
-            li neben der alte Bahnlinie
-            li 8005 Nibelheim
-            li Tel: +00 07 77 HEAVEN
+            li #{contact.name}
+            li #{contact.address}
+            li #{contact.add}
+            li #{contact.city}, #{contact.plz}
+            li #{contact.phone}
             li Allgemeine Anfragen: 
-              a(href="mailto:info@7thheaven-midgar.jp") info@7thheaven-midgar.jp
+              a(href=`mailto:${contact.email.info}`)= contact.email.info
             li Bewerbungen & Training: 
-              a(href="mailto:hr@7thheaven-midgar.jp") hr@7thheaven-midgar.jp
+              a(href=`mailto:${contact.email.hr}`)= contact.email.hr
         .col.image
           img.image-click(src="/static/images/gallery/location/ubahn.png" alt="Job Standort 7th Heaven Bar")
       hr
@@ -61,8 +61,8 @@ block content
           ul.list-style-none
             li Wir bilden neue Mitglieder in Küche, Service und Handel aus – mit echter Leidenschaft und makofreier Energie.
             li Ob du am Anfang stehst oder neu durchstartest – bei uns zählt, dass du lernst, was dich stärker macht.
-            li Melde dich unter 07-77-HEAVEN oder per Mail an 
-              a(href="mailto:hr@7thheaven-midgar.jp") hr@7thheaven-midgar.jp
+            li Melde dich unter #{contact.phone} oder per Mail an 
+              a(href=`mailto:${contact.email.hr}`)= contact.email.hr
         .col.image
           img.image-click(src="/static/images/gallery/impressionen/impressionen_05.jpg" alt="Jobs - Ausbildung & Training")
       hr

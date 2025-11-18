@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         perPage: 1,
         pagination: false,
         autoplay: true,
-        interval: 5000,
+        interval: 2500,
         speed: 1000,
         arrows: false,
       });

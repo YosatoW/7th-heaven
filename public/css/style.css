@@ -274,7 +274,7 @@ ul {
   text-align: center;
 }
 
-.note h1,
+.note h3,
 .note p {
   color: var(--color-orig);
 }

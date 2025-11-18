@@ -8,14 +8,17 @@ block content
       .intro-block.text-center
         h1 Impressum
       
-      h3 7th Heaven
-      p Inhaberin: Tifa Lockhart
-      p Adresse: Sektor 7 Slums, Midgar
-      p Telefon: +00 07 77 HEAVEN
-      p E-Mail: info@7thheaven-midgar.jp
+      h3 #{contact.name}
+      p #{contact.owner}
+      p #{contact.address}
+      p #{contact.add}
+      p #{contact.city}, #{contact.plz}
+      p #{contact.phone}
+      p  
+        a(href=`mailto:${contact.email.info}`)= contact.email.info
       <br>
       h3 Verantwortlich für den Inhalt gemäss § 55 Abs. 2 RStV:
-      p Tifa Lockhart (gleiche Anschrift)
+      p #{contact.owner} (gleiche Anschrift)
       
       .note.text-center
         h3 Hinweis:

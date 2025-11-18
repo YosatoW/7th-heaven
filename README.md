@@ -1,30 +1,32 @@
 # 1. ☕ 7th Heaven – Midgar Edition  
 **Eine stilvolle Webapplikation inspiriert von Final Fantasy VII**
 
-Willkommen im *7th Heaven* – der Oase im Herzen von Midgar.  
+Willkommen im *7th Heaven* – der Oase im Herzen von Midgar in Sektor 7.  
 Dieses Projekt entstand als Transferarbeit und demonstriert moderne Webentwicklung mit Node.js, Express, Pug und Docker.  
 Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 
 <!-- ToC -->
 - [1. ☕ 7th Heaven – Midgar Edition](#1--7th-heaven--midgar-edition)
 - [2. 💠 Features](#2--features)
-- [3. 🐋 Docker – Schnellstart](#3--docker--schnellstart)
-  - [3.1. **Docker installieren**](#31-docker-installieren)
-  - [3.2. Git installieren (optional)](#32-git-installieren-optional)
+- [3. Programme](#3-programme)
+  - [3.1. Visual Studio Code installieren](#31-visual-studio-code-installieren)
+  - [3.2. Docker installieren](#32-docker-installieren)
+  - [3.3. Git installieren (optional)](#33-git-installieren-optional)
 - [4. Projekt herunterladen](#4-projekt-herunterladen)
   - [4.1. Option A: Git Clone](#41-option-a-git-clone)
   - [4.2. Option B: ZIP Download](#42-option-b-zip-download)
-- [5. **.env Datei (Konfiguration)**](#5-env-datei-konfiguration)
-- [6. **Projektstruktur**](#6-projektstruktur)
-- [7. überprüfen, ob Port 80 (HTTP) auf deinem System frei oder belegt ist.](#7-überprüfen-ob-port-80-http-auf-deinem-system-frei-oder-belegt-ist)
+- [5. .env Datei (Konfiguration)](#5-env-datei-konfiguration)
+- [6. Projektstruktur](#6-projektstruktur)
+- [7. überprüfen, ob Port 80 frei ist](#7-überprüfen-ob-port-80-frei-ist)
   - [7.1. Windows](#71-windows)
   - [7.2. Linux/macOS](#72-linuxmacos)
   - [7.3. Port ändern](#73-port-ändern)
 - [8. Starten](#8-starten)
-  - [8.1. Container bauen und stearten](#81-container-bauen-und-stearten)
+  - [8.1. Container bauen und starten](#81-container-bauen-und-starten)
   - [8.2. Im Browser öffnen](#82-im-browser-öffnen)
 - [9. Lokale Entwicklung ohne Docker (optional)](#9-lokale-entwicklung-ohne-docker-optional)
 <!-- /ToC -->
+<br>
 
 ---
 
@@ -38,21 +40,32 @@ Hier verbinden sich Technologie, Design und ein Hauch FF7-Atmosphäre.
 - 🔹 Docker-Setup für einfache Installation & Deployment
 - 🔹 `.env`-Datei für konfigurierbare Umgebungsvariablen
 - 🔹 Automatische Migration mit Drizzle ORM
+- 🔹 REST-API für Kontakt & Newsletter
 
+<br>
 
-# 3. 🐋 Docker – Schnellstart
+---
+
+# 3. Programme
 
 Die einfachste Möglichkeit, das Projekt zu starten:
 
-## 3.1. **Docker installieren**
+## 3.1. Visual Studio Code installieren
+- Falls noch nicht vorhanden:<br>
+👉 [https://code.visualstudio.com/](https://code.visualstudio.com/)
+- Installiere und **starte Docker Desktop**
+
+## 3.2. Docker installieren
 - Falls noch nicht vorhanden:<br>
 👉 [https://www.docker.com/get-started](https://www.docker.com/get-started)
 - Installiere und **starte Docker Desktop**
 
-## 3.2. Git installieren (optional)
+## 3.3. Git installieren (optional)
 - Lade Git herunter:<br>
 👉 [https://git-scm.com/downloads](https://git-scm.com/downloads)
 - Installiere Git, falls du den Code direkt von GitHub klonen möchtest.
+
+<br>
 
 ---
 
@@ -69,9 +82,11 @@ code 7th-heaven
 - Lade das Projekt als ZIP von GitHub herunter.
 - Entpacke es in einen Ordner deiner Wahl.
 
+<br>
+
 ---
 
-# 5. **.env Datei (Konfiguration)**
+# 5. .env Datei (Konfiguration)
 Bevor du die Anwendung startest (lokal oder per Docker),
 muss im Projekt-Root eine Datei namens `.env` erstellt werden.
 
@@ -82,11 +97,12 @@ POSTGRES_USER=
 POSTGRES_PASSWORD=
 POSTGRES_DB=
 ```
-*(Die Datei .env wird nicht in GitHub hochgeladen – sie bleibt lokal.)*
+
+<br>
 
 ---
 
-# 6. **Projektstruktur**
+# 6. Projektstruktur
 ```csharp
 7th-heaven/
 ├── views/                # Pug Templates
@@ -98,12 +114,15 @@ POSTGRES_DB=
 ├── server.js             # Hauptserver
 ├── docker-compose.yml
 ├── Dockerfile
-└── README.md
+├── README.md
+└── .env                  # Konfigurations Datei
 ```
+
+<br>
 
 ---
 
-# 7. überprüfen, ob Port 80 (HTTP) auf deinem System frei oder belegt ist.
+# 7. überprüfen, ob Port 80 frei ist
 ## 7.1. Windows
 1. Eingabeaufforderung (CMD oder PowerShell) öffnen
 2. Befhel eingeben:
@@ -114,7 +133,7 @@ netstat -aon | find ":80"
 ```nginx
 TCP    0.0.0.0:80    0.0.0.0:0    LISTENING    1234
 ```
-Dann ist **Port 80** belebt, und der Prozess mit der **PID 1234** nutz ihn.
+Dann ist **Port 80** belegt, und der Prozess **PID 1234** nutz ihn.
 
 ## 7.2. Linux/macOS
 1. Terminal öffnen
@@ -136,13 +155,15 @@ sudo lsof -i :80
 - wenn nichts zurückkommt, ist der Port frei.
 
 ## 7.3. Port ändern
-- Ändere in `docker-compose.yml` den `load-balancer` auf ein freue Port
+- Ändere in `docker-compose.yml` den `load-balancer` auf ein freie Port
 - z.B. in  `8080:80` oder andere freie Ports.
+
+<br>
 
 ---
 
 # 8. Starten
-## 8.1. Container bauen und stearten
+## 8.1. Container bauen und starten
 ```ps1
 docker compose up -d --build
 ```
@@ -153,6 +174,8 @@ docker compose up -d --build
 - [http://localhost:80/api/newsletter](http://localhost:80/api/newsletter)
 
 Port anpassen wenn nötig.
+
+<br>
 
 ---
 

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form) return;
 
   const popup = document.querySelector(".popup");
-  const closeBtn = popup?.querySelector(".close");
+  // const closeBtn = popup?.querySelector(".close");
   const okBtn = popup?.querySelector("button");
 
   form.addEventListener('submit', async (e) => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.success) {
         popup.style.display = "flex";
         okBtn?.addEventListener("click", () => (popup.style.display = "none"), { once: true });
-        closeBtn?.addEventListener("click", () => (popup.style.display = "none"), { once: true });
+        // closeBtn?.addEventListener("click", () => (popup.style.display = "none"), { once: true });
         form.reset();
       } else {
         alert(data.message || "Fehler bei der Anmeldung.");

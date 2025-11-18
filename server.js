@@ -110,6 +110,21 @@ function renderPage(res, view, data = {}) {
   });
 }
 
+// ──────────────────── E-Mail-Adressen ────────────────────
+app.locals.contact = {
+  name: '7th Heaven',
+  owner: 'Tifa Lockhart',
+  address: 'Sektor 7 Slums, Midgar',
+  add: 'neben der alte Bahnlinie',
+  plz: 'Postcode M7-777',
+  city: 'Midgar City',
+  phone: '+13 01 97 HEAVEN',
+  email:  {
+    info: 'info@7thheaven-midgar.jp',
+    hr: 'hr@7thheaven-midgar.jp'
+  }
+};
+
 
 // ─────────────────────────────────────────────────────────────
 // 🌐 SEITEN-ROUTEN

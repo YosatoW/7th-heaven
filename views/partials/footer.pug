@@ -6,13 +6,13 @@ footer.site-footer
     .footer-column
       ul.list-style-none
         h3 Kontakt
-        li 7th Heaven
-        li Sector 7 Slums, Midgar
-        li neben der alte Bahnlinie
-        li 8005 Nibelheim
-        li Tel: +00 07 77 HEAVEN
+        li #{contact.name}
+        li #{contact.address}
+        li #{contact.add}
+        li #{contact.city}, #{contact.plz}
+        li #{contact.phone}
         li
-          a(href="mailto:info@7thheaven-midgar.jp") info@7thheaven-midgar.jp
+          a(href=`mailto:${contact.email.info}`)= contact.email.info
         p Öffnungszeiten:
         ul.list-style-none
           li Montag – Donnerstag: 17:00 – 01:00
@@ -42,7 +42,6 @@ footer.site-footer
 // Newsletter Pop-up
 .popup(style="display:none")
   .popup-content
-    span.close ×
     h3 Vielen Dank für deine Anmeldung!
-    p Deine E-Mail wurde gespeichert.
+    p Wenn die E-Mail bisher nicht drin war, steckt sie jetzt im System. Und keine Sorge — die Turks haben davon nichts mitbekommen."
     button.button1 OK
