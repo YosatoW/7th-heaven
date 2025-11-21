@@ -121,7 +121,7 @@ h6 {
     LAYOUT / GRID SYSTEM
 ********************************************************************************/
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding:  20px;
 }
@@ -591,10 +591,23 @@ footer {
 }
 
 .modal img {
-  max-width: 90vw; 
-  max-height: 90vh;
+  max-width: 90%; 
+  max-height: 90%;
   object-fit: contain;
 }
+
+.modal .prev, .modal .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.modal .prev { left: 20px; }
+.modal .next { right: 20px; }
 
 .modal-content {
   position: relative;
@@ -691,7 +704,7 @@ footer {
 ********************************************************************************/
 .splide {
   margin: 2rem auto;
-  max-width: 1000px;
+  max-width: 90%;
   padding: 0;
   visibility: visible;
 }
@@ -703,7 +716,7 @@ footer {
 
 /* Für Hauptbilder */
 .splide__slide img {
-  width: 100%;
+  width: 150%;
   height: auto;
   object-fit: cover;
 }
@@ -756,7 +769,7 @@ input, textarea {
 }
 
 .form-group.checkbox label {
-  display: inline-block; /* Kein Block mehr */
+  display: inline-block;
   margin: 0;
   white-space: nowrap; /* Verhindert Umbruch */
 }
@@ -847,7 +860,7 @@ input, textarea {
     SEITEN-SPEZIFISCH
 ********************************************************************************/
 
-/******************** Essen & Getränke ********************/
+******************* Essen & Getränke *******************
 section.menu.page-left ul.list-style-none:nth-of-type(n+1) {
   margin-left: 40px;
 }
@@ -858,12 +871,6 @@ section.menu.page-left ul.list-style-none li {
 
 section.menu.page-left ul.list-style-none li strong {
   color: var(--color-titel);
-}
-
-/******************** IMPRESUM ********************/
-section.datenschutz.page-left ul.list-style-disc:nth-of-type(n+1),
-section.datenschutz.page-left ul.list-style-none:nth-of-type(n+1) {
-  margin-left: 40px;
 }
 
 

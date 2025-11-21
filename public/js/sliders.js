@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         arrows: true,      // Keine Pfeile
         cover: true,        // Bilder im Container skalieren
         autoplay: true,     // Automatischer Übergang
-        interval: 5000,     // Zeit zwischen den Übergängen
+        interval: 2500,     // Zeit zwischen den Übergängen
         speed: 1000,        // Übergangsgeschwindigkeit
         pauseOnHover: false,  // Nicht anhalten bei Hover
         resetProgress: false, // Fortschritt nicht zurücksetzen
@@ -40,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         perPage: 1,
         pagination: false,
         autoplay: true,
-        interval: 2500,
+        interval: 500,
         speed: 1000,
         arrows: false,
+        pauseOnHover: true,
       });
 
       instance.mount();

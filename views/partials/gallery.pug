@@ -1,6 +1,14 @@
+//- Galerie-Mixin
 mixin gallery(images)
   .section.gallery
     .gallery
       each img in images
         .gallery-item
           img(src=img, alt="Galeriebild", class="image-click")
+
+//- Modal ausserhalb der Galerie
+#imageModal.modal(style="display:none")
+  span.close &times;
+  button.prev &#10094;
+  img#modalImg(src="", alt="Großes Bild")
+  button.next &#10095;
