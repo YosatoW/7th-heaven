@@ -13,7 +13,7 @@ COPY . .
 
 
 # Exponierter Port
-EXPOSE 3300
+EXPOSE 3000
 
 # Start im Dev-Modus (z. B. mit nodemon)
 CMD ["npm", "run", "dev"]

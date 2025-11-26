@@ -2,8 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const { db } = require("./database");
-const { newsletterTable } = require("./db/schema");
+const { db } = require("../database");
+const { newsletterTable } = require("../db/schema");
 const { eq } = require("drizzle-orm");
 
 router.get("/", async (req, res) => {
