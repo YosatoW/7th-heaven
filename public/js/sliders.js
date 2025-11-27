@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         isNavigation: true, // Als Navigation verwenden
         gap: 10,            // Abstand zwischen den Thumbnails
         focus: 'center',    // Zentrieren des aktiven Thumbnails
-        pagination: false,  // Keine Pagination
-        cover: true,        // Bilder im Container skalieren
-        arrows: false,      // Keine Pfeile
+        pagination: false,
+        cover: true,
+        arrows: false,
       });
 
       main.sync(thumbs);
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         perPage: 1,
         pagination: false,
         autoplay: true,
-        interval: 500,
+        interval: 1000,
         speed: 1000,
         arrows: false,
         pauseOnHover: true,
